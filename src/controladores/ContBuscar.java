@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import models.Clientes;
 import visual.PrinClientes;
-import visual.Principal;
+
 
 
 public class ContBuscar implements MouseListener{
@@ -27,34 +27,49 @@ public class ContBuscar implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
        Datos datosDAO = new Datos();  
-       Clientes data =null;   
+       Clientes data = null;   
        try {
            if (txtEmail.getText().equals("")){
                System.out.println("dni loco");
                txtEmail.setVisible(false);
-             data = datosDAO.Buscar(null,txtDni.getText());
+               data = datosDAO.Buscar(null,txtDni.getText());
+               
                if(data==null){
                    System.out.println("no hay nadita amigo");
-                   
+                   PrinClientes priCli =   new PrinClientes(data);
                }
                else{
-                   PrinClientes priCli = new PrinClientes();
-                     
+                
+                  PrinClientes priCli =   new PrinClientes(data);
+                  
                     System.out.println(data.getNombre());
                     System.out.println(data.getApellido());
                     System.out.println(data.getDni());
-                   System.out.println(data.getEmail());
-                   
-                   
+                    System.out.println(data.getEmail());   
                    
                }
                
            }   
             else
-               if(txtDni.getText().equals(0)){
+               if(txtDni.getText().equals("") ){
                txtDni.setVisible(false);
                System.out.println("email loco");
-               datosDAO.Buscar(txtEmail.getText(),null);
+              data = datosDAO.Buscar(txtEmail.getText(),null);
+               if(data==null){
+                   System.out.println("no hay nadita amigo");
+                   
+               }
+               else{
+                
+                  PrinClientes priCli =   new PrinClientes(data);
+                  
+                    System.out.println(data.getNombre());
+                    System.out.println(data.getApellido());
+                    System.out.println(data.getDni());
+                   System.out.println(data.getEmail());   
+                   
+                   
+               }
                }
            } catch (SQLException ex) {
             Logger.getLogger(ContBuscar.class.getName()).log(Level.SEVERE, null, ex);
@@ -63,9 +78,6 @@ public class ContBuscar implements MouseListener{
      
        }
         
-        
-    
-
     @Override
     public void mousePressed(MouseEvent e) {
     }

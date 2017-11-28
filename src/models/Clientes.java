@@ -10,33 +10,23 @@ public class Clientes {
     private String celular;
     private String calle;
     private String altura;
-    private String pisoDpto;
-    
-    
-    public Clientes(Integer id, String nombre, String apellido, Integer dni , String email , String telefono, String celular, String calle, String altura, String pisoDpto){
-       // this.id =id;
-        //this.nombre=nombre;
-       // this.apellido=apellido;
-       // this.dni=dni;
-       // this.email=email;
-        this.telefono=telefono;
-        this.celular=celular;
-        this.calle=calle;
-        this.altura=altura;
-        this.pisoDpto=pisoDpto;
-    }
+    private String pisodpto;
+    private Clientes cliente;
 
-    public Clientes(int id, String nombre, String apellido, int dni, String email) {
+    public Clientes(int id, String nombre, String apellido, int dni, String email, String telefono, String celular, String calle, String altura, String pisodpto) {
         this.id =id;
         this.nombre=nombre;
         this.apellido=apellido;
         this.dni=dni;
         this.email=email;
-       
-    }
+        this.telefono=telefono;
+        this.celular=celular;
+        this.calle=calle;
+        this.altura=altura;
+        this.pisodpto=pisodpto;         
+        }
 
   
-      
 
     public Integer getId() {
         return id;
@@ -110,15 +100,12 @@ public class Clientes {
         this.altura = altura;
     }
 
-    public String getPisoDpto() {
-        return pisoDpto;
+    public String getPisodpto() {
+        return pisodpto;
     }
 
-    public void setPisoDpto(String pisoDpto) {
-        this.pisoDpto = pisoDpto;
+    public void setPisodpto(String pisodpto) {
+        this.pisodpto = pisodpto;
     }
-
-   
-
-    
+        
 }

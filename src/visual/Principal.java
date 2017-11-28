@@ -29,7 +29,6 @@ public class Principal extends JFrame {
             
 
     private ContCancelar canc = new ContCancelar();    
-    private ContGrabar gra = new ContGrabar();   
     private ContBuscar bus = new ContBuscar(txtEmail,txtDni);   
      
      
